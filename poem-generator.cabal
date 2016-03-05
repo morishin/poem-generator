@@ -1,0 +1,44 @@
+name:                poem-generator
+version:             0.1.0.0
+synopsis:            Generate poem from source text
+description:         Please see README.md
+homepage:            http://github.com/morishin/poem-generator
+license:             BSD3
+license-file:        LICENSE
+author:              Shintaro Morikawa
+maintainer:          sntr92@gmail.com
+copyright:           2016 Shintaro Morikawa
+category:            Text
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+  build-depends:       base >= 4.7 && < 5
+                     , mecab
+                     , containers
+                     , random
+  default-language:    Haskell2010
+
+executable poem-generator-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , poem-generator
+                     , mecab
+  default-language:    Haskell2010
+
+test-suite poem-generator-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/morishin/poem-generator

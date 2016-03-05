@@ -1,0 +1,10 @@
+resolver: lts-5.1
+packages:
+- '.'
+- location:
+    git: git@github.com:morishin/hsmecab.git
+    commit: 2da6677fbd42bb77d3b6e61c02edfeebe248e184
+extra-deps: []
+flags: {}
+extra-package-dbs: []
+extra-lib-dirs: [/usr/local/lib]
