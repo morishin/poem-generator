@@ -10,7 +10,7 @@ import Data.Maybe (isNothing, fromMaybe, fromJust)
 import Data.List (intercalate)
 import Text.MeCab
 
-data Word = Middle String | Begin | End deriving (Eq, Show)
+data Word = Begin | Middle String | End deriving (Eq, Show)
 
 fromWord :: Word -> String
 fromWord (Middle x) = x
